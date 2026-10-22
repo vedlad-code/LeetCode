@@ -6,10 +6,6 @@ public:
             num = num * 10 + x % 10;
             x /= 10;
         }
-        if (num > 2147483647 || num < -2147483648LL) {
-            return 0;
-        }
-        return (int)num;
-        
+        return (num < -2147483648 || num > 2147483647) ? 0: (int)num;
     }
 };
