@@ -1,21 +1,15 @@
 class Solution {
 public:
     int reverse(int x) {
-        long long rev = 0;
-        long long y = x;
-        if (y < 0) {
-            y = -y;
+        long num = 0;
+        while (x != 0) {
+            num = num * 10 + x % 10;
+            x /= 10;
         }
-        while (y > 0) {
-            rev = rev * 10 + y % 10;
-            y /= 10;
-        }
-        if (x < 0) {
-            rev = -rev;
-        }
-        if (rev > 2147483647 || rev < -2147483648LL) {
+        if (num > 2147483647 || num < -2147483648LL) {
             return 0;
         }
-        return (int)rev;
+        return (int)num;
+        
     }
 };
